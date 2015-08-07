@@ -84,8 +84,8 @@ Vagrant.configure(2) do |config|
     sudo mkdir -p /etc/ckan/default
     sudo chown -R `whoami` /etc/ckan/
     cd /usr/lib/ckan/default/src/ckan
-    sudo mv /vagrant/development.ini /etc/ckan/default/development.ini 
-    sudo mv /vagrant/jetty /etc/default/jetty 
+    sudo cp /vagrant/development.ini /etc/ckan/default/development.ini 
+    sudo cp /vagrant/jetty /etc/default/jetty 
     sudo mv /etc/solr/conf/schema.xml /etc/solr/conf/schema.xml.bak
     sudo ln -s /usr/lib/ckan/default/src/ckan/ckan/config/solr/schema.xml /etc/solr/conf/schema.xml
     sudo service jetty restart
