@@ -41,3 +41,35 @@ paster serve /etc/ckan/default/development.ini
 ```
 
 Browser to http://127.0.0.1:5000/
+
+## Installing Wordpress
+
+Wordpress is already installed, install mysql and initialize the db
+
+```sh
+sudo apt-get install mysql-server php5-mysql
+```
+
+Enter "test" as password when prompted, once installed login to mysql with the same password 
+
+```sh
+mysql -u root -p
+```
+
+excute following commands
+
+```sh
+CREATE DATABASE wp;
+CREATE USER wp_user@localhost IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON wp.* TO wp_user@localhost;
+FLUSH PRIVILEGES;
+exit
+
+```
+restart apache service 
+
+```sh
+sudo service apache2 restart
+```
+Browser to http://127.0.0.1:8080/
+

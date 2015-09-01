@@ -23,6 +23,7 @@ Vagrant.configure(2) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network "forwarded_port", guest: 5000, host: 5000
+  config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -89,5 +90,21 @@ Vagrant.configure(2) do |config|
     sudo mv /etc/solr/conf/schema.xml /etc/solr/conf/schema.xml.bak
     sudo ln -s /usr/lib/ckan/default/src/ckan/ckan/config/solr/schema.xml /etc/solr/conf/schema.xml
     sudo service jetty restart
+    sudo apt-get install apache2 -y
+    sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt -y
+    sudo service apache2 restart
+    cd /vagrant/
+    wget http://wordpress.org/latest.tar.gz
+    tar xzvf latest.tar.gz
+    sudo apt-get install php5-gd libssh2-php -y
+    sudo rm latest.tar.gz
+    cd /vagrant/wordpress
+    sudo rsync -avP /vagrant/wordpress/ /var/www/
+    sudo cp /vagrant/wp-config.php /var/www/
+    cd /var/www
+    sudo rm index.html
+    sudo chown -R vagrant:www-data *
+    mkdir /var/www/wp-content/uploads
+    sudo chown -R :www-data /var/www/wp-content/uploads
   SHELL
 end
