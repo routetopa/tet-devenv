@@ -23,7 +23,7 @@ Setup the database
 ```sh
 sudo -u postgres createuser -S -D -R -P ckan_default
 ```
-Enter "**test**" as password when prompted 
+Enter **"test"**" as password when prompted 
 
 ```sh
 sudo -u postgres createdb -O ckan_default ckan_default -E LATIN1
@@ -50,7 +50,7 @@ Wordpress is already installed, install mysql and initialize the db
 sudo apt-get install mysql-server php5-mysql
 ```
 
-Enter "test" as password when prompted, once installed login to mysql with the same password 
+Enter **"test"** as password when prompted, once installed login to mysql with the same password 
 
 ```sh
 mysql -u root -p
