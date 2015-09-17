@@ -23,7 +23,7 @@ Setup the database
 ```sh
 sudo -u postgres createuser -S -D -R -P ckan_default
 ```
-Enter "test" as password when prompted 
+Enter "**test**" as password when prompted 
 
 ```sh
 sudo -u postgres createdb -O ckan_default ckan_default -E LATIN1
@@ -72,4 +72,3 @@ restart apache service
 sudo service apache2 restart
 ```
 Browser to http://127.0.0.1:8080/
-
