@@ -1,0 +1,11 @@
+{
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/GSA/ckan-php-client.git"
+        }
+    ],
+    "require": {
+        "gsa/ckan-php-client": "0.*"
+    },
+}
