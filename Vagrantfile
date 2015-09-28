@@ -91,9 +91,10 @@ Vagrant.configure(2) do |config|
     sudo ln -s /usr/lib/ckan/default/src/ckan/ckan/config/solr/schema.xml /etc/solr/conf/schema.xml
     sudo service jetty restart
     sudo apt-get install apache2 -y
-    sudo apt-get install software-properties-common python-software-properties
-    sudo add-apt-repository ppa:ondrej/php5
-    sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt php5-curl -y
+    sudo apt-get install software-properties-common python-software-properties -y
+    sudo add-apt-repository ppa:ondrej/php5 -y
+    sudo apt-get update
+    sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt curl php5-curl mc git -y
     sudo service apache2 restart
     sudo a2enmod rewrite
     sudo service apache2 restart
@@ -110,10 +111,6 @@ Vagrant.configure(2) do |config|
     sudo chown -R vagrant:www-data *
     mkdir /var/www/wp-content/uploads
     sudo chown -R :www-data /var/www/wp-content/uploads
-    # additional libraries
-    sudo apt-get update
-    sudo apt-get install php5 -y
-    sudo apt-get install curl mc git -y
     # composer
     sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/bin
     # ckan-php-client
