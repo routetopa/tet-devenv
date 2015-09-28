@@ -1,11 +1,18 @@
 {
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/GSA/ckan-php-client.git"
-        }
-    ],
-    "require": {
-        "gsa/ckan-php-client": "0.*"
-    },
+  "name": "egov/rtpa-devenv",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": [
+      {
+          "type": "git",
+          "url": "https://github.com/GSA/ckan-php-client.git"
+      }
+  ],
+  "require": {
+    "php": ">=5.4.17",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "phpunit/phpunit": "~4.0",
+    "gsa/ckan-php-client": "0.*"
+  }
 }
