@@ -108,5 +108,13 @@ Vagrant.configure(2) do |config|
     sudo chown -R vagrant:www-data *
     mkdir /var/www/wp-content/uploads
     sudo chown -R :www-data /var/www/wp-content/uploads
+    # additional libraries
+    sudo apt-get install curl mc -y
+    # composer
+    sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/bin
+    # ckan-php-client
+    sudo cp /vagrant/composer.json /var/www/
+    cd /var/www/
+    composer install
   SHELL
 end
