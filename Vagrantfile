@@ -93,6 +93,8 @@ Vagrant.configure(2) do |config|
     sudo apt-get install apache2 -y
     sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt -y
     sudo service apache2 restart
+    sudo a2enmod rewrite
+    sudo service apache2 restart
     cd /vagrant/
     wget http://wordpress.org/latest.tar.gz
     tar xzvf latest.tar.gz
