@@ -47,7 +47,7 @@ Browser to http://127.0.0.1:5000/
 Wordpress is already installed, install mysql and initialize the db
 
 ```sh
-sudo apt-get install mysql-server php5-mysql
+sudo apt-get install mysql-server
 ```
 
 Enter **"test"** as password when prompted, once installed login to mysql with the same password 
