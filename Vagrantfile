@@ -94,7 +94,7 @@ Vagrant.configure(2) do |config|
     sudo apt-get install software-properties-common python-software-properties -y
     sudo add-apt-repository ppa:ondrej/php5 -y
     sudo apt-get update
-    sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt curl php5-curl mc git -y
+    sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt php5-mysql curl php5-curl mc git -y
     sudo service apache2 restart
     sudo a2enmod rewrite
     sudo service apache2 restart
@@ -104,18 +104,18 @@ Vagrant.configure(2) do |config|
     sudo apt-get install php5-gd libssh2-php -y
     sudo rm latest.tar.gz
     cd /vagrant/wordpress
-    sudo rsync -avP /vagrant/wordpress/ /var/www/
-    sudo cp /vagrant/wp-config.php /var/www/
-    cd /var/www
+    sudo rsync -avP /vagrant/wordpress/ /var/www/html/
+    sudo cp /vagrant/wp-config.php /var/www/html/
+    cd /var/www/html
     sudo rm index.html
     sudo chown -R vagrant:www-data *
-    mkdir /var/www/wp-content/uploads
-    sudo chown -R :www-data /var/www/wp-content/uploads
+    mkdir /var/www/html/wp-content/uploads
+    sudo chown -R :www-data /var/www/html/wp-content/uploads
     # composer
     sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/bin
     # ckan-php-client
-    sudo cp /vagrant/composer.json /var/www/
-    cd /var/www/
+    sudo cp /vagrant/composer.json /var/www/html/
+    cd /var/www/html/
     php /bin/composer.phar install
   SHELL
 end
