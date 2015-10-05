@@ -94,7 +94,7 @@ Vagrant.configure(2) do |config|
     sudo apt-get install software-properties-common python-software-properties -y
     sudo add-apt-repository ppa:ondrej/php5 -y
     sudo apt-get update
-    sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt curl php5-curl mc git -y
+    sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt curl php5-mysql php5-curl mc git -y
     sudo service apache2 restart
     sudo a2enmod rewrite
     sudo service apache2 restart
