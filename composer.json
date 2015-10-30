@@ -1,18 +1,18 @@
 {
-  "name": "egov/rtpa-devenv",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "repositories": [
+   "name":"egov/rtpa-devenv",
+   "minimum-stability":"dev",
+   "prefer-stable":true,
+   "repositories":[
       {
-          "type": "git",
-          "url": "https://github.com/GSA/ckan-php-client.git"
+         "url":"https://github.com/arekstasiewicz/ckan-php-client.git",
+         "type":"git"
       }
-  ],
-  "require": {
-    "php": ">=5.4.17",
-    "ext-curl": "*",
-    "ext-json": "*",
-    "phpunit/phpunit": "~4.0",
-    "gsa/ckan-php-client": "0.*"
-  }
+   ],
+   "require":{
+      "php":">=5.4.17",
+      "ext-curl":"*",
+      "ext-json":"*",
+      "phpunit/phpunit":"~4.0",
+      "arekstasiewicz/ckan-php-client":"dev-master"
+   }
 }
