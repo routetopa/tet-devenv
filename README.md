@@ -1,4 +1,4 @@
-# RTPA Development Environment Setup
+# TET Development Environment Setup
 
 ## Prerequisites
 Install Virtual Box and Vagrant 
