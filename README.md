@@ -9,8 +9,8 @@ Install Virtual Box and Vagrant
 
 Clone git repository 
 ```sh
-git clone git@gitlab.insight-centre.org:egov/rtpa-devenv.git
-cd rtpa-devenv
+git clone https://github.com/routetopa/tet-devenv.git
+cd tet-devenv
 vagrant up
 ```
 
